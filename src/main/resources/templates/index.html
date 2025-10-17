@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/index.css"/>
+    <title th:text="${config.pageTitle}"></title>
+</head>
+<body>
+
+<div class="panels">
+    <div th:each="panel : ${panels}" class="panel">
+        <p th:text="${panel.title}" class="title"></p>
+        <p th:text="${panel.render}" class="content"></p>
+    </div>
+</div>
+
+</body>
+</html>
