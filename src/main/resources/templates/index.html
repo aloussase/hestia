@@ -30,7 +30,7 @@
 <div class="panels">
     <div th:each="panel : ${panels}" class="panel">
         <h2 th:text="${panel.title}" class="title"></h2>
-        <p th:text="${panel.render}" class="content"></p>
+        <p th:utext="${panel.render}" class="content"></p>
     </div>
 </div>
 
