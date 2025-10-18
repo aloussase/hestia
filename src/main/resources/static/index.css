@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -7,13 +10,29 @@
 body {
     background-color: #000;
     color: #fff;
+    font-family: "Source Code Pro", monospace;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+h1 {
+    margin-bottom: 2rem;
+}
+
+.title {
+    margin-top: 2rem;
+    text-align: center;
+    font-size: 2rem;
+    font-family: "Silkscreen", sans-serif;
+    font-weight: 400;
+    font-style: normal;
 }
 
 .panels {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    column-gap: 0.8rem;
-    padding: 1rem;
+    column-gap: 1rem;
+    padding: 1rem 2rem;
 }
 
 .panel {
@@ -23,16 +42,21 @@ body {
     gap: 0.5rem;
     border: 1px solid #fff;
     border-radius: 5px;
-    transition: all 0.8s ease-out;
+    transition: all 0.4s ease-out;
 
     &:hover {
-        transform: translateY(-5%);
+        transform: translateY(-2%);
+        box-shadow: -1px 11px 34px -6px rgba(210, 240, 247, 0.75);
+        -webkit-box-shadow: -1px 11px 34px -6px rgba(210, 240, 247, 0.75);
+        -moz-box-shadow: -1px 11px 34px -6px rgba(210, 240, 247, 0.75);
     }
 
     .title {
         font-size: 1.2rem;
         border-bottom: #fff dotted 1px;
         margin-bottom: 0.5rem;
+        padding-bottom: 0.5rem;
+        margin-top: 0;
     }
 
     .content {
