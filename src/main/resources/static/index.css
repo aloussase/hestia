@@ -19,6 +19,33 @@ h1 {
     margin-bottom: 2rem;
 }
 
+.search-bar {
+    padding: 0 2rem;
+    width: 100%;
+    margin-bottom: 1rem;
+
+    label {
+        width: 100%;
+        display: flex;
+        gap: 0.4rem;
+        align-items: center;
+
+        input[type=text] {
+            flex: auto;
+            padding: 0.4rem;
+        }
+
+        button[type=submit] {
+            background: transparent;
+            cursor: pointer;
+            border: none;
+            color: #fff;
+            font-size: 1rem;
+        }
+    }
+
+}
+
 .title {
     margin-top: 2rem;
     text-align: center;

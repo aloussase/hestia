@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="/index.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+          integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
     <title th:text="${config.pageTitle}"></title>
 </head>
 <body>
@@ -10,6 +13,19 @@
 <h1 class="title">
     Home Lab
 </h1>
+
+<form action="#"
+      th:action="@{/dashboard/filter}"
+      method="post"
+      class="search-bar"
+>
+    <label for="search">
+        <input id="search" name="search" type="text" placeholder="Search for panels..."/>
+        <button type="submit">
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+    </label>
+</form>
 
 <div class="panels">
     <div th:each="panel : ${panels}" class="panel">

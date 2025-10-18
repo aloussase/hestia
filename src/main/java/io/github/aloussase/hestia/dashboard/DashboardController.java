@@ -5,7 +5,9 @@ import io.github.aloussase.hestia.config.PanelConfig;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @RequestMapping("/dashboard")
 @Controller
@@ -24,6 +26,16 @@ public class DashboardController {
     public String index(Model model) {
         model.addAttribute("config", config);
         model.addAttribute("panels", panelConfig.getPanels());
+        return "index";
+    }
+
+    @PostMapping("filter")
+    public String filter(Model model, @RequestParam String search) {
+        final var panels = panelConfig.getPanels().stream()
+                .filter(panel -> panel.title().toLowerCase().contains(search.toLowerCase()))
+                .toList();
+        model.addAttribute("config", config);
+        model.addAttribute("panels", panels);
         return "index";
     }
 
