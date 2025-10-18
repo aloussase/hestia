@@ -1,4 +1,16 @@
 services:
+  dashboard:
+    image: aloussase69/hestia:latest
+    restart: unless-stopped
+    build:
+      context: .
+    ports:
+      - "8080:${PORT:-8080}"
+    environment:
+      HESTIA_POSTGRES_URL: jdbc:postgresql://postgres@postgres:db:5432/postgres
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+
   db:
     image: "postgres:17"
     restart: unless-stopped
