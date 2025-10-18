@@ -36,7 +36,7 @@ public class DashboardController {
                 .toList();
         model.addAttribute("config", config);
         model.addAttribute("panels", panels);
-        return "index";
+        return "redirect:/dashboard";
     }
 
 }

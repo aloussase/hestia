@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
           integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
           crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <script src="/reload.js" defer></script>
     <title th:text="${config.pageTitle}"></title>
 </head>
 <body>
@@ -13,6 +14,15 @@
 <h1 class="title">
     Home Lab
 </h1>
+
+<nav class="navbar">
+    <div class="navbar-item">
+        <label for="reload">
+            <input type="checkbox" id="reload"/>
+            Reload?
+        </label>
+    </div>
+</nav>
 
 <form action="#"
       th:action="@{/dashboard/filter}"
@@ -33,6 +43,5 @@
         <p th:utext="${panel.render}" class="content"></p>
     </div>
 </div>
-
 </body>
 </html>
