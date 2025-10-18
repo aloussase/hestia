@@ -69,7 +69,7 @@ final public class DockerPanel extends AbstractPanel implements IPanel {
             if (e.getCause() instanceof ConnectException) {
                 return "Failed to connect to Docker, is the daemon running?";
             }
-            log.error(e.getMessage(), e);
+            log.error("There was an error while evaluating Docker panel", e);
             return "An error occurred while evaluating the panel. See the server logs for details.";
         }
     }

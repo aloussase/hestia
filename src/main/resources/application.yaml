@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: hestia
+  datasource:
+    url: ${HESTIA_POSTGRES_URL:-jdbc:postgresql://localhost:5432/postgres}
+    driver-class-name: org.postgresql.Driver
+
+dashboard:
+  page:
+    title: Home Lab
+  panels:
+    docker:
+      enabled: true
+    postgres:
+      enabled: true
