@@ -5,10 +5,14 @@ import com.github.dockerjava.core.DockerClientImpl;
 import com.github.dockerjava.okhttp.OkDockerHttpClient;
 import com.github.dockerjava.transport.DockerHttpClient;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
+import org.springframework.stereotype.Component;
 
 import java.net.ConnectException;
 
 @Slf4j
+@ConditionalOnProperty(name = "dashboard.panels.docker.enabled", havingValue = "true")
+@Component
 final public class DockerPanel extends AbstractPanel implements IPanel {
 
     private final DockerHttpClient httpClient;
