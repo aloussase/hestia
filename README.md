@@ -16,6 +16,8 @@ panels.
 - **Responsive Design** - Clean web interface accessible from any device
 - **Real-time Updates** - Live monitoring of your infrastructure
 
+For a list of available panels, see the Panels section below.
+
 ## Prerequisites
 
 - Java 21 or higher
@@ -38,6 +40,16 @@ docker-compose up -d
 ```
 
 The application will start on `http://localhost:8080/dashboard`
+
+## Available Panels
+
+### Docker
+
+TODO
+
+### Postgres
+
+TODO
 
 ## Development Setup
 
@@ -63,10 +75,6 @@ The application can be configured through `src/main/resources/application.proper
 1. Fork the repository
 2. Create a feature branch
 3. Submit a pull request
-
-## Roadmap
-
-- [ ] Dynamic configuration
 
 ## License
 
