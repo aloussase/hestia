@@ -2,8 +2,11 @@ spring:
   application:
     name: hestia
   datasource:
-    url: "${HESTIA_POSTGRES_URL:jdbc:postgresql://localhost:5432/postgres?user=postgres&password=postgres}"
+    url: "${HESTIA_POSTGRES_URL:jdbc:postgresql://localhost:5432/postgres?user=postgres&password=postgres&ApplicationName=hestia}"
     driver-class-name: org.postgresql.Driver
+    hikari:
+      maximum-pool-size: 2
+      idle-timeout: 30000
 
 dashboard:
   page:
