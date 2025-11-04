@@ -1,9 +1,6 @@
 package io.github.aloussase.hestia.config;
 
-import io.github.aloussase.hestia.panel.CmdPanel;
-import io.github.aloussase.hestia.panel.DockerPanel;
-import io.github.aloussase.hestia.panel.IPanel;
-import io.github.aloussase.hestia.panel.PostgresPanel;
+import io.github.aloussase.hestia.panel.*;
 import lombok.Data;
 import lombok.Getter;
 import org.springframework.beans.factory.annotation.Value;
@@ -24,8 +21,9 @@ public class PanelConfig {
     @ConfigurationProperties(prefix = "dashboard.panels")
     @Component
     @Data
-    public static class CmdPanelsConfig {
+    public static class StringsPanelsConfig {
         private List<String> cmds;
+        private List<String> images;
     }
 
     public PanelConfig(
@@ -33,12 +31,13 @@ public class PanelConfig {
             boolean dockerPanelEnabled,
             @Value("${dashboard.panels.postgres.enabled}")
             boolean postgresPanelEnabled,
-            CmdPanelsConfig cmdPanelsConfig,
+            StringsPanelsConfig stringsPanelsConfig,
             ApplicationContext applicationContext
     ) throws Exception {
-        for (final var cmd : cmdPanelsConfig.getCmds()) {
+        for (final var cmd : stringsPanelsConfig.getCmds())
             panels.add(CmdPanel.class.getDeclaredConstructor(String.class).newInstance(cmd));
-        }
+        for (final var cmd : stringsPanelsConfig.getImages())
+            panels.add(RemoteImagePanel.class.getDeclaredConstructor(String.class).newInstance(cmd));
         if (dockerPanelEnabled)
             panels.add(applicationContext.getBean(DockerPanel.class));
         if (postgresPanelEnabled)

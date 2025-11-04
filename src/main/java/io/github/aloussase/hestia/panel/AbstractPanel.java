@@ -51,4 +51,8 @@ public abstract non-sealed class AbstractPanel implements IPanel {
         return "<pre>" + text + "</pre>";
     }
 
+    protected String image(String url) {
+        return "<img src='" + url + "'/>";
+    }
+
 }

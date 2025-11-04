@@ -1,7 +1,7 @@
 package io.github.aloussase.hestia.panel;
 
 public sealed interface IPanel
-        permits AbstractPanel, CmdPanel, DockerPanel, IGraphicPanel, PostgresPanel {
+        permits AbstractPanel, CmdPanel, DockerPanel, IGraphicPanel, PostgresPanel, RemoteImagePanel {
 
     /**
      * Get the panel's title.
