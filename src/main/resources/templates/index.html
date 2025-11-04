@@ -39,7 +39,9 @@
 
 <div class="panels">
     <div th:each="panel : ${panels}" class="panel">
-        <h2 th:text="${panel.title}" class="title"></h2>
+        <div th:if="${panel.title != null}">
+            <h2 th:text="${panel.title}" class="title"></h2>
+        </div>
         <p th:utext="${panel.render}" class="content"></p>
     </div>
 </div>

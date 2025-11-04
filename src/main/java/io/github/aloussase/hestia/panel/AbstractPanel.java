@@ -47,4 +47,8 @@ public abstract non-sealed class AbstractPanel implements IPanel {
                 "</div>";
     }
 
+    protected String verbatim(String text) {
+        return "<pre>" + text + "</pre>";
+    }
+
 }

@@ -8,10 +8,16 @@ spring:
       maximum-pool-size: 2
       idle-timeout: 30000
 
+logging:
+  level:
+    io.github.aloussase: DEBUG
+
 dashboard:
   page:
     title: Home Lab
   panels:
+    cmds:
+      - "figlet 'Home Lab'"
     docker:
       enabled: true
     postgres:
