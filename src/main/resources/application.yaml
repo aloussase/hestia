@@ -18,6 +18,8 @@ dashboard:
   panels:
     cmds:
       - "figlet 'Home Lab'"
+    images:
+      - 'https://i.giphy.com/sULKEgDMX8LcI.webp'
     docker:
       enabled: true
     postgres:
